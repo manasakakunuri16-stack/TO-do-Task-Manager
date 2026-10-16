@@ -1,0 +1,7 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env
+backend/tasks.db
+backend/tasks_old.db

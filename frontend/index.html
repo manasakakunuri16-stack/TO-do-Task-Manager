@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+      <h1>To-Do Task Manager</h1>
+      <p class="subtitle">Plan your day. Complete your goals.</p>
+    </header>
+
+    <section class="panel">
+      <h2 id="formHeading">Add a New Task</h2>
+
+      <form id="taskForm">
+        <label for="title">Task title *</label>
+        <input id="title" type="text" placeholder="What do you need to do?" required>
+
+        <label for="description">Description</label>
+        <textarea id="description" placeholder="Add some details..."></textarea>
+
+        <div class="form-row">
+          <div>
+            <label for="deadline">Deadline</label>
+            <input id="deadline" type="date">
+          </div>
+          <div>
+            <label for="priority">Priority</label>
+            <select id="priority">
+              <option>Low</option>
+              <option selected>Medium</option>
+              <option>High</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="saveButton" type="submit">+ Add Task</button>
+          <button id="cancelButton" type="button" class="secondary hidden">
+            Cancel Edit
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section class="tasks-section">
+      <div class="list-heading">
+        <div>
+          <h2>Your Tasks</h2>
+          <p id="taskCount">Loading tasks...</p>
+        </div>
+        <input id="search" type="search" placeholder="Search tasks...">
+      </div>
+
+      <div class="filters">
+        <button class="filter active" data-status="All">All</button>
+        <button class="filter" data-status="Pending">Pending</button>
+        <button class="filter" data-status="Completed">Completed</button>
+      </div>
+
+      <div id="message" role="status"></div>
+      <div id="taskList"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
